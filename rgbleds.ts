@@ -16,7 +16,7 @@ namespace basic { // rgbleds.ts color=#54C9C9
     // es wird kein Wert zurück gegeben (void)
     // die Variable ist noch undefined, also keiner konkreten Funktion zugeordnet
     let onSetLedColorsHandler3: (color1: number, color2: number, color3: number, brightness: number) => void
-    let onSetLedColorsHandler: (led: eRgbLed, color: number, on: boolean, blinken: boolean, helligkeit: number) => void
+    let onSetLedColorsHandler1: (led: eRgbLed, color: number, on: boolean, blinken: boolean, helligkeit: number) => void
 
 
     // sichtbarer Event-Block; deprecated=true
@@ -37,8 +37,8 @@ namespace basic { // rgbleds.ts color=#54C9C9
     //% group="RGB LEDs (Calliope v3)" deprecated=true
     //% block="SetLedColors" weight=9
     //% draggableParameters=reporter
-    export function onSetLedColors(cb: (led: eRgbLed, color: number, on: boolean, blinken: boolean, helligkeit: number) => void) {
-        onSetLedColorsHandler = cb
+    export function onSetLedColors1(cb: (led: eRgbLed, color: number, on: boolean, blinken: boolean, helligkeit: number) => void) {
+        onSetLedColorsHandler1 = cb
     }
 
 
@@ -54,8 +54,8 @@ namespace basic { // rgbleds.ts color=#54C9C9
     //% helligkeit.min=5 helligkeit.max=100 helligkeit.defl=20
     //% inlineInputMode=inline
     export function setLedColors1(led: number, color: number, on = true, blinken = false, helligkeit = 20) {
-        if (onSetLedColorsHandler) { // v3 hat 3 RgbLeds
-            onSetLedColorsHandler(led, color, on, blinken, helligkeit)
+        if (onSetLedColorsHandler1) { // v3 hat 3 RgbLeds
+            onSetLedColorsHandler1(led, color, on, blinken, helligkeit)
         }
         else if (led == eRgbLed.a) { // v1, v2: b und c wird ignoriert
             if (!on || (blinken && n_RgbLed == color)) // entweder aus .. oder an und blinken

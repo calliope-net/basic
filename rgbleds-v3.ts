@@ -12,7 +12,7 @@ namespace basic { // rgbleds-v3.ts
         n_RgbLedTimer = input.runningTime()
     }
 
-    onSetLedColors(function (led, color, on, blinken, helligkeit) {
+    onSetLedColors1(function (led, color, on, blinken, helligkeit) {
 
         if (!on || (blinken && a_RgbLeds[led] == color)) // entweder aus .. oder an und blinken
             color = Colors.Off // alle Farben aus = 0
