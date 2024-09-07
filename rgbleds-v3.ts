@@ -1,6 +1,5 @@
-// Gib deinen Code hier ein
 
-namespace basic { // b-rgbleds-v3.ts
+namespace basic { // rgbleds-v3.ts
 
 
     let a_RgbLeds = [0, 0, 0, 0] // speichert 3 LEDs + Helligkeit, wenn nur eine geändert wird
@@ -42,4 +41,4 @@ namespace basic { // b-rgbleds-v3.ts
     })
 
 
-} // b-rgbleds-v3.ts
+} // rgbleds-v3.ts

@@ -1,14 +1,13 @@
-// Gib deinen Code hier ein
 
-namespace basic { // b-rgbleds.ts color=#54C9C9
+namespace basic { // rgbleds.ts color=#54C9C9
 
     // ========== group="RGB LEDs (v3)" subcategory="Aktoren"
 
     export enum eRgbLed { a, b, c } // Index im Array
     let n_RgbLed = 0 // aktueller Wert v1 v2
 
-    //% blockId=btf_RgbLed block="%led" blockHidden=true
-    export function btf_RgbLed(led: eRgbLed): number {
+    //% blockId=basic_RgbLed block="%led" blockHidden=true
+    export function basic_RgbLed(led: eRgbLed): number {
         return led
     }
 
@@ -46,9 +45,9 @@ namespace basic { // b-rgbleds.ts color=#54C9C9
 
     // ========== group="RGB LEDs (Calliope v1 v2 v3)" subcategory="LEDs, Display" color=#54C9C9
 
-    //% group="RGB LEDs (Calliope v1 v2 nur LED a)" subcategory="LEDs, Display"
+    //% group="RGB LEDs (Calliope v1 v2 nur LED a)"
     //% block="RGB LED %led %color || %on blinken %blinken Helligkeit %helligkeit \\%" weight=5
-    //% led.shadow=btf_RgbLed
+    //% led.shadow=basic_RgbLed
     //% color.shadow="colorNumberPicker" color.defl=Colors.Off
     //% on.shadow=toggleOnOff on.defl=1
     //% blinken.shadow=toggleYesNo
@@ -70,7 +69,7 @@ namespace basic { // b-rgbleds.ts color=#54C9C9
     }
 
 
-    //% group="RGB LEDs (Calliope v1 v2 nur LED a)" subcategory="LEDs, Display"
+    //% group="RGB LEDs (Calliope v1 v2 nur LED a)"
     //% block="RGB LEDs a %color1 b %color2 c %color3 || Helligkeit %helligkeit \\%" weight=4
     //% color1.shadow="colorNumberPicker" color1.defl=Colors.Off
     //% color2.shadow="colorNumberPicker" color2.defl=Colors.Off
@@ -84,14 +83,10 @@ namespace basic { // b-rgbleds.ts color=#54C9C9
             basic.setLedColor(color1) // v1 v2
     }
 
-    //% group="RGB LEDs (Calliope v1 v2 nur LED a)" subcategory="LEDs, Display"
+    //% group="RGB LEDs (Calliope v1 v2 nur LED a)"
     //% block="RGB LEDs aus" weight=3
     export function setLedColorsOff() {
         setLedColors3(0, 0, 0)
-        //if (onSetLedColorsHandler3)
-        //    onSetLedColorsHandler3(0, 0, 0, 20) // v3 Ereignis Block auslösen, nur wenn benutzt
-        //else
-        //    basic.setLedColor(0) // v1 v2
     }
 
-} // b-rgbleds.ts
+} // rgbleds.ts
