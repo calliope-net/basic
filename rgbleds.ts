@@ -53,7 +53,7 @@ namespace basic { // rgbleds.ts color=#54C9C9
     //% blinken.shadow=toggleYesNo
     //% helligkeit.min=5 helligkeit.max=100 helligkeit.defl=20
     //% inlineInputMode=inline
-    export function setLedColors(led: number, color: number, on = true, blinken = false, helligkeit = 20) {
+    export function setLedColors1(led: number, color: number, on = true, blinken = false, helligkeit = 20) {
         if (onSetLedColorsHandler) { // v3 hat 3 RgbLeds
             onSetLedColorsHandler(led, color, on, blinken, helligkeit)
         }
