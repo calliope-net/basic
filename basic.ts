@@ -5,8 +5,8 @@ namespace basic {
 
     //  let n5x5_setClearScreen = true // wenn ein Image angezeigt wird, merken dass z.B. Funkgruppe wieder angezeigt werden muss
 
-    //% group="BIN" subcategory="25 LED Display"
-    //% block="lösche 25 LED Display" weight=9
+    //% group="LED matrix" deprecated=1
+    //% block="lösche LED-Matrix" weight=9
     export function setClearScreen() {
         // n5x5_setClearScreen = true
         a5x5_xBuffer.fill(0xFF) // mit ungültigen Werten füllen, die rekursiv wieder zu 0 werden
@@ -15,13 +15,20 @@ namespace basic {
         }
     }
 
+    //% group="LED matrix"
+    //% block="lösche LED-Matrix" weight=9
+    export function clearLedMatrix() {
+        a5x5_xBuffer.fill(0)
+        basic.clearScreen()
+    }
+
     //let n5x5_x01y0 = 0 // Bit 5-4 Betriebsart in x=0-1 y=0
     let a5x5_x01y0 = [false, false]
     let a5x5_xBuffer = Buffer.create(5)
 
     // ↕↕...
 
-    //% group="BIN" subcategory="25 LED Display"
+    //% group="LED matrix" advanced=1
     //% block="zeige ↑↑... x0 %x0y0 x1 %x1y0" weight=8
     //% x0y0.shadow=toggleOnOff
     //% x1y0.shadow=toggleOnOff
@@ -48,7 +55,7 @@ namespace basic {
         map
     }
 
-    //% group="BIN" subcategory="25 LED Display"
+    //% group="LED matrix"
     //% block="zeige ↕↕↕↕↕ %int %format ←x %xLed" weight=3
     //% xLed.min=0 xLed.max=4 xLed.defl=4
     export function zeigeBIN(int: number, format: ePlot, xLed: number) {
@@ -116,9 +123,9 @@ namespace basic {
 
     let n_showString = ""
 
-    //% group="Text" subcategory="25 LED Display"
+    //% group="LED matrix"
     //% block="zeige Text wenn geändert %text" weight=1
-    //% text.shadow="btf_text"
+    //% text.shadow=basic_text
     export function zeigeText(text: any) {
         let tx = convertToText(text)
         if (n_showString != tx) {
@@ -137,27 +144,27 @@ namespace basic {
 
     // ========== group="Funktionen"
 
-    //% blockId=btf_text block="%s" blockHidden=true
-    export function btf_text(s: string): string { return s }
+    //% blockId=basic_text block="%s" blockHidden=true
+    export function basic_text(s: string): string { return s }
 
-    //% group="Funktionen" subcategory="25 LED Display"
+    //% group="Funktionen" advanced=1
     //% block="// %text" weight=9
-    //% text.shadow="btf_text"
+    //% text.shadow=basic_text
     export function comment(text: any): void { }
 
-    //% group="Funktionen" subcategory="25 LED Display"
+    //% group="Funktionen" advanced=1
     //% block="Simulator" weight=7
     export function simulator() {
         return "€".charCodeAt(0) == 8364
     }
 
-    //% group="Funktionen" subcategory="25 LED Display"
+    //% group="Funktionen" advanced=1
     //% block="%i0 zwischen %i1 und %i2" weight=6
     export function between(i0: number, i1: number, i2: number): boolean {
         return (i0 >= i1 && i0 <= i2)
     }
 
-    //% group="Funktionen" subcategory="25 LED Display"
+    //% group="Funktionen" advanced=1
     //% block="mapInt32 %value|from low %fromLow|high %fromHigh|to low %toLow|high %toHigh" weight=3
     //% fromLow.defl=1 fromHigh.defl=255 toLow.defl=-100 toHigh.defl=100
     //% inlineInputMode=inline
