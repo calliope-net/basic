@@ -9,11 +9,16 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "basic.ts"
+        "basic.ts",
+        "rgbleds.ts",
+        "rgbleds-v3.ts"
     ],
     "testFiles": [
         "test.ts"
     ],
+    "fileDependencies": {
+        "rgbleds-v3.ts": "v3"
+    },
     "targetVersions": {
         "target": "4.0.29",
         "targetId": "calliopemini"
